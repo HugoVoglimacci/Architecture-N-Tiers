@@ -1,0 +1,14 @@
+<agm-map [zoom]="2.5" [usePanning]="true" [latitude]="30.0" [longitude]="0.0">
+
+
+  <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude">
+
+    <agm-info-window>
+      <strong style="color: #333333"> {{marker.studentName}} </strong>
+    </agm-info-window>
+
+  </agm-marker>
+
+
+
+</agm-map>

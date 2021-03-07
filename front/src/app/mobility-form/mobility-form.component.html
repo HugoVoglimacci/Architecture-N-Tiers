@@ -1,0 +1,111 @@
+<form #studentForm="ngForm" (ngSubmit)="saveStudent()">
+
+  <div class="form-group">
+    <label for="lastname">Last Name : </label>
+    <input type="text"
+           id="lastname"
+           class="form-control"
+           [(ngModel)]="newStudent.lastname"
+           name="lastname"
+           #lastnameInput="ngModel"
+           required
+    >
+    <p style="color: red" *ngIf="lastnameInput.invalid">Lastname is mandatory.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="firstname">First Name : </label>
+    <input type="text"
+           id="firstname"
+           class="form-control"
+           [(ngModel)]="newStudent.firstname"
+           name="firstname"
+           #firstnameInput="ngModel"
+           required
+    >
+    <p style="color: red" *ngIf="firstnameInput.invalid">Firstname is mandatory.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="promotion">Promotion : </label>
+    <!--
+    <input type="text"
+           id="promotion"
+           class="form-control"
+           [(ngModel)]="newStudent.promotion"
+           name="promotion"
+           #emailInput="ngModel"
+           required
+    >
+    -->
+
+    <select id="promotion" name="promotion" [(ngModel)]="newStudent.promotion">
+      <option value="CITISE 1">CITISE 1</option>
+      <option value="CITISE 2">CITISE 2</option>
+      <option value="FISE 1">FISE 1</option>
+      <option value="FISE 2">FISE 2</option>
+      <option value="FISE 3">FISE 3</option>
+    </select>
+
+  </div>
+
+  <div class="form-group">
+  <label for="country">Country : </label>
+  <input type="text"
+         id="country"
+         class="form-control"
+         [(ngModel)]="newMobility.country"
+         name="country"
+         #countryInput="ngModel"
+         required
+  >
+  <p style="color: red" *ngIf="countryInput.invalid">Country is mandatory.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="city">City : </label>
+    <input type="text"
+           id="city"
+           class="form-control"
+           [(ngModel)]="newMobility.city"
+           name="city"
+           #cityInput="ngModel"
+           required
+    >
+    <p style="color: red" *ngIf="cityInput.invalid">City is mandatory.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Start Date : </label>
+    <input type="text"
+           id="startDate"
+           class="form-control"
+           [(ngModel)]="newMobility.startDate"
+           name="startDate"
+           #startDateInput="ngModel"
+           required
+    >
+    <p style="color: red" *ngIf="startDateInput.invalid">Start date is mandatory.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">End Date : </label>
+    <input type="text"
+           id="endDate"
+           class="form-control"
+           [(ngModel)]="newMobility.endDate"
+           name="endDate"
+           #endDateInput="ngModel"
+           required
+    >
+    <p style="color: red" *ngIf="endDateInput.invalid">End date is mandatory.</p>
+  </div>
+
+  <div class="form-group">
+  <button class="btn btn-primary"
+          type="submit"
+          [disabled]="studentForm.invalid"
+  >Submit</button>
+    </div>
+
+</form>

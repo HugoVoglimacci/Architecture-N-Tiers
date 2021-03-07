@@ -1,0 +1,40 @@
+:host {
+  background-color: #333;
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2);
+  padding: 0 20px;
+  display: flex;
+  min-height: 70px;
+  justify-content: space-between;
+  align-items: center;
+
+  #navigation {
+    a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+
+      &.route-active {
+        color: var(--primary);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  #titre {
+    font-size: 1.5rem;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      border-bottom: 2px solid var(--primary);
+      width: 100%;
+      top:0 ;
+    }
+  }
+}

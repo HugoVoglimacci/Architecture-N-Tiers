@@ -1,0 +1,25 @@
+<div>
+
+  <label for="filter">Filter : </label>
+  <input type="text"
+         id="filter"
+         placeholder="Search Here"
+         class="form-control"
+         name="filter"
+         [(ngModel)]="term"
+  >
+</div>
+
+<div id="details">
+  <p style="color:red;">Name</p>
+  <p style="color:red;">Country</p>
+  <p style="color:red;">City</p>
+  <p style="color:red;">Start Date</p>
+  <p style="color:red;">End Date</p>
+  <p></p>
+
+</div>
+
+<app-mobility-card *ngFor="let mobility of mobilities | filter:term"
+                  [mobilityInput]="mobility"
+></app-mobility-card>
