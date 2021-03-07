@@ -1,6 +1,7 @@
 package fr.tse.architecture.service.impl;
 
 import fr.tse.architecture.dao.MobilityRepository;
+import fr.tse.architecture.dao.StudentRepository;
 import fr.tse.architecture.domain.Mobility;
 import fr.tse.architecture.domain.Student;
 import fr.tse.architecture.service.MobilityService;
@@ -15,6 +16,8 @@ public class MobilityServiceImpl implements MobilityService {
 
     @Autowired
     private MobilityRepository mobilityRepository;
+    @Autowired
+    private StudentRepository studentRepository;
 
 
     @Override
@@ -33,6 +36,9 @@ public class MobilityServiceImpl implements MobilityService {
     @Transactional
     public Mobility createMobility(Mobility mobility) {
         Mobility mobilityCreated = null;
+
+        Student studentCreated = null;
+        studentCreated = studentRepository.save(mobility.getStudent());
         mobilityCreated = mobilityRepository.save(mobility);
         return mobilityCreated;
     }
